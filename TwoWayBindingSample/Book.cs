@@ -14,21 +14,21 @@ namespace TwoWayBindingSample
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
         }
 
-        private string _Name;
+        private string _Title;
 
         public string Title
         {
             get
             {
-                return _Name;
+                return _Title;
             }
             set
             {
                 // 次の行にブレークポイントをセット
-                if (value == _Name)
+                if (value == _Title)
                     return;
 
-                _Name = value;
+                _Title = value;
                 NotifyPropertyChanged();
             }
         }
