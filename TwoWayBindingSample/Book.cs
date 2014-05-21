@@ -24,7 +24,6 @@ namespace TwoWayBindingSample
             }
             set
             {
-                // 次の行にブレークポイントをセット
                 if (value == _Title)
                     return;
 
@@ -43,7 +42,6 @@ namespace TwoWayBindingSample
             }
             set
             {
-                // 次の行にブレークポイントをセット
                 if (value == _Price)
                     _Price = value;
 
