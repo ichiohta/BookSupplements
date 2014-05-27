@@ -52,8 +52,10 @@ namespace DumpTileTemplates
 
         private void UpdateTile_Click(object sender, RoutedEventArgs e)
         {
+            // 更新情報として表示するテキスト
             string text = TileText.Text;
 
+            // XMLの生成
             var content =
                 new XDocument(
                     new XElement(
@@ -76,9 +78,11 @@ namespace DumpTileTemplates
                                 new XElement("text", new XAttribute("id", "1"), new XText(text)))
                                 )));
 
+            // XDocument → XmlDocument
             var document = new XmlDocument();
             document.LoadXml(content.ToString(SaveOptions.DisableFormatting));
 
+            // ライブタイルを更新
             TileUpdateManager
                 .CreateTileUpdaterForApplication()
                 .Update(new TileNotification(document));
